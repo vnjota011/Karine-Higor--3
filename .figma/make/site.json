@@ -1,0 +1,11 @@
+{
+  "title": "KARINE E IGOR <3",
+  "description": "This web application enhances and beautifies ideas through customizable HTML, CSS, and JavaScript templates, ideal for designers and developers seeking inspiration.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
