@@ -81,6 +81,9 @@
 *.woff2              filter=lfs diff=lfs merge=lfs -text
 *.eot                filter=lfs diff=lfs merge=lfs -text
 
+# Keep the public PIX code available to hosts that do not fetch Git LFS assets.
+public/qrcode-pix.png -filter -diff -merge binary
+
 # ---------------------------------------------------------------------------
 # Data & Machine Learning
 # ---------------------------------------------------------------------------
