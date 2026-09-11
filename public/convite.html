@@ -578,8 +578,8 @@
 </dialog>
 
 <script>
-  // Countdown
-  const wedding = new Date('2026-11-07T17:00:00');
+  // Countdown fixed to Brazil time (UTC-3)
+  const wedding = new Date('2026-11-07T17:00:00-03:00');
   function pad(n) { return String(n).padStart(2, '0'); }
   function tick() {
     const diff = wedding - Date.now();
