@@ -152,45 +152,6 @@
       margin-bottom: 2.2rem;
     }
 
-    /* ── COUNTDOWN ── */
-    .countdown {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-      gap: 0;
-      width: 100%;
-      border: 1px solid rgba(58,71,40,.15);
-      margin-bottom: 2.2rem;
-    }
-    .cd-unit {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1.1rem .5rem;
-      border-right: 1px solid rgba(58,71,40,.13);
-    }
-    .cd-unit:last-child { border-right: none; }
-    .cd-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      line-height: 1;
-      color: var(--olive);
-      min-width: 2ch;
-      text-align: center;
-    }
-    .cd-label {
-      font-family: 'Montserrat', sans-serif;
-      font-size: .52rem;
-      font-weight: 500;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--olive);
-      opacity: .55;
-      margin-top: .35rem;
-    }
-
     /* ── INFO ROWS ── */
     .info-list {
       width: 100%;
@@ -438,14 +399,6 @@
     <!-- Invite -->
     <p class="invite-text">Com carinho, convidam para seu<br>casamento</p>
 
-    <!-- Countdown -->
-    <div class="countdown" id="countdown" aria-label="Contagem regressiva para o casamento">
-      <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><span class="cd-label">Dias</span></div>
-      <div class="cd-unit"><span class="cd-num" id="cd-h">--</span><span class="cd-label">Horas</span></div>
-      <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><span class="cd-label">Min</span></div>
-      <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-label">Seg</span></div>
-    </div>
-
     <!-- Info -->
     <div class="info-list">
       <div class="info-row">
@@ -578,23 +531,6 @@
 </dialog>
 
 <script>
-  // Countdown fixed to Brazil time (UTC-3)
-  const wedding = new Date('2026-11-07T17:00:00-03:00');
-  function pad(n) { return String(n).padStart(2, '0'); }
-  function tick() {
-    const diff = wedding - Date.now();
-    if (diff <= 0) {
-      ['cd-d','cd-h','cd-m','cd-s'].forEach(id => document.getElementById(id).textContent = '00');
-      return;
-    }
-    document.getElementById('cd-d').textContent = pad(Math.floor(diff / 86400000));
-    document.getElementById('cd-h').textContent = pad(Math.floor((diff % 86400000) / 3600000));
-    document.getElementById('cd-m').textContent = pad(Math.floor((diff % 3600000) / 60000));
-    document.getElementById('cd-s').textContent = pad(Math.floor((diff % 60000) / 1000));
-  }
-  tick();
-  setInterval(tick, 1000);
-
   const dialog   = document.getElementById('pixDialog');
   const openBtn  = document.getElementById('openPix');
   const closeBtn = document.getElementById('closePix');
